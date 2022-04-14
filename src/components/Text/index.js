@@ -32,7 +32,7 @@ Text.defaultProps = {
 }
 
 Text.propTypes = {
-    element: propTypes.string,
+    element: propTypes.oneOf(['p', 'span', 'div']),
     className: propTypes.string,
     strong: propTypes.bool,
     italic: propTypes.bool,
