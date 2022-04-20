@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Heading} from '../config';
+import {Container, Heading, Button} from '../config';
 
 import s from './Slider.module.css';
 
@@ -19,7 +19,7 @@ const Slider = () => {
                         Wow.Wow.Wow
                     </Heading>
                     <div className={s.call}>
-                        <button className={s.button}>Wow</button>
+                        <Button origin />
                     </div>
                 </Container>
             </div>
