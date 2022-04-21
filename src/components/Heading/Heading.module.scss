@@ -1,9 +1,21 @@
 .root {
     padding: 0;
-    margin: 0 0 .5em;
+    margin: .5em 0;
     color: #000000d9;
     font-weight: 600;
     text-align: center;
+    text-align: center;
+    &.backLine {
+        &::after {
+            content: "";
+            display: block;
+            width: 30%;
+            position: relative;
+            border-bottom: 1px solid #aaa;
+            text-align: center;
+            margin: 15px auto 0;
+        }
+    }
 }
 .level1  {
     font-size: 38px;
