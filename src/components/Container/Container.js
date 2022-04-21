@@ -4,15 +4,16 @@ import cn from 'classnames';
 
 import s from './Container.module.scss';
 
-const Container = ({children, className }) => {
+const Container = ({children, className}) => {
 
     return (
-        <div className={cn(s.root, className ? className : '')}>
+        <div className={cn(s.root,
+            s[`${className}`]
+        )}>
             {children}
         </div>
     );
 };
-
 Container.propTypes = {
     className: propTypes.string,
     children: propTypes.node
