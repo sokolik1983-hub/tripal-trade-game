@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-import React from "react";
-import {Container} from "../config"
-=======
-import {useEffect, useState, useRef} from 'react';
+import {useEffect, useState} from 'react';
 import {Container} from '../config';
 import cn from 'classnames';
->>>>>>> Stashed changes
 
-import s from "./Header.module.css"
+import s from "./Header.module.scss"
 
 const MENU = ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4'];
 
@@ -21,15 +16,10 @@ const Header = () => {
 
     return (
         <header className={s.root}>
-<<<<<<< Updated upstream
-            <Container>
-                <div className={s.header}>
-=======
             <div className={cn(s.header,
                 {[s.small]: scroll > 60}
             )}>
-                <Container className={s.headerWrap}>
->>>>>>> Stashed changes
+                <Container className='headerWrap'>
                     <div className={s.logo}>
                     </div>
                     <ul className={s.nav}>
@@ -37,8 +27,8 @@ const Header = () => {
                             MENU.map(item => <li key={item}><a href='#'>{item}</a></li>)
                         }
                     </ul>
-                </div>
-            </Container>
+                </Container>
+            </div>
         </header>
     );
 };

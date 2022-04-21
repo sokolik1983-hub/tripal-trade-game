@@ -317,7 +317,7 @@ const Biography = ({setShowBiography, showBiographyID}) => {
                     {
                         currentBIO
                             ?
-                            currentBIO.map( ({id, type, text, src}) => {
+                            currentBIO.map( ({type, text, src}) => {
                                 switch(type) {
                                     case 'h1':
                                         return <Heading key={randomKeyGenerator()} level={1}>{text}</Heading>;

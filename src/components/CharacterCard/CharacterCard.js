@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import {ReactComponent as Heart} from '../../assets/heart.svg';
 import Heading from '../Heading';
 import cn from 'classnames';

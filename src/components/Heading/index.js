@@ -2,7 +2,7 @@ import { createElement } from 'react';
 import cn from 'classnames';
 import propTypes from 'prop-types';
 
-import s from './Heading.module.css';
+import s from './Heading.module.scss';
 
 const Heading = ({children, level, className}) => {
         const el = `h${level}`;

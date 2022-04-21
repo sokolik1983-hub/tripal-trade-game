@@ -1,7 +1,7 @@
 import React from "react";
 import {Container} from "../config"
 
-import s from "./Footer.module.css"
+import s from "./Footer.module.scss"
 
 const Footer = () => {
     return (
