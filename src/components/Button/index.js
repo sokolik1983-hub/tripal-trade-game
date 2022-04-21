@@ -1,12 +1,13 @@
-import React from "react";
-import propTypes from "prop-types";
+import React from 'react';
+import propTypes from 'prop-types';
+import cn from 'classnames'
 
 import s from './styles.module.scss'
 
-const Button = ({origin}) => {
+const Button = ({white, children}) => {
 
     return (
-        <button className={origin ? s.button : s.darkStyle}>{origin ? "Wow" : "Go back"}</button>
+        <button className={cn({[s.white]: white})}>{children}</button>
     );
 };
 

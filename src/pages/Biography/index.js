@@ -292,32 +292,19 @@ const BIO = {
     ],
 };
 
-const Biography = ({setShowBiography, showBiographyID}) => {
-    const [currentBIO, setCurrentBIO] = useState(null);
-
-    const onBackClick = () => {
-        setShowBiography(null);
-    };
-
-    useEffect(() => {
-        Object.keys(BIO).forEach( (key, i) => {
-            if(key === `${showBiographyID}`) {
-                setCurrentBIO(Object.values(BIO)[i])
-            }
-        });
-    }, []);
+const Biography = ({onBackClick, biographyID}) => {
 
     return (
         <Container>
             <div className={s.root}>
                 <span onClick={onBackClick} >
-                    <Button />
+                    <Button white>Go back</Button>
                 </span>
                 <div className={s.BioWrap}><br />
                     {
-                        currentBIO
+                        BIO[biographyID]
                             ?
-                            currentBIO.map( ({type, text, src}) => {
+                            BIO[biographyID].map( ({type, text, src}) => {
                                 switch(type) {
                                     case 'h1':
                                         return <Heading key={randomKeyGenerator()} level={1}>{text}</Heading>;
@@ -342,7 +329,7 @@ const Biography = ({setShowBiography, showBiographyID}) => {
 
 Biography.propTypes = {
     showBiographyID: propTypes.number,
-    setShowBiography: propTypes.func,
+    onBackClick: propTypes.func.isRequired,
 }
 
 export default Biography;

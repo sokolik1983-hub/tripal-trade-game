@@ -19,7 +19,7 @@ const Slider = () => {
                         Wow.Wow.Wow
                     </Heading>
                     <div className={s.call}>
-                        <Button origin />
+                        <Button>Wow</Button>
                     </div>
                 </Container>
             </div>

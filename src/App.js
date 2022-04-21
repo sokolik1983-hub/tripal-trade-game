@@ -69,24 +69,28 @@ const CHARACTERS = [
 
 function App() {
     const [characters, setCharacters] = useState(CHARACTERS);
-    const [showBiographyID, setShowBiographyID] = useState(null);
+    const [biographyID, setBiographyID] = useState(null);
 
     const handleLikeClick = (id) => {
         const newArrCharacters = characters.map(
             item => (item.id === id) ?
                 { ...item, isLike: !item.isLike } :
-                { ...item });
+                item );
         setCharacters(newArrCharacters);
     };
+
+    const handleBackClick = () => {
+        setBiographyID(null)
+    }
 
   return (
     <>
       <Header />
         {
-            showBiographyID ?
+            biographyID ?
                 <Biography
-                    setShowBiography={setShowBiographyID}
-                    showBiographyID={showBiographyID}
+                    onBackClick={handleBackClick}
+                    biographyID={biographyID}
                 /> :
                 <>
                     <Slider />
@@ -117,7 +121,7 @@ function App() {
                                     humanName={humanName}
                                     isLike={isLike}
                                     onLikeClick={handleLikeClick}
-                                    setShowBiographyID={setShowBiographyID}
+                                    setBiographyID={setBiographyID}
                                 />)
                         }
                     </Container>

@@ -5,14 +5,14 @@ import propTypes from 'prop-types';
 
 import s from './CharacterCard.module.scss';
 
-export const CharacterCard = ({id, name, description, src, humanName, isLike, onLikeClick, setShowBiographyID}) => {
+export const CharacterCard = ({id, name, description, src, humanName, isLike, onLikeClick, setBiographyID}) => {
 
     const handleClick = () => {
         onLikeClick(id);
     };
 
     const readBiography = (id) => {
-        setShowBiographyID(id);
+        setBiographyID(id);
     }
 
     return (
