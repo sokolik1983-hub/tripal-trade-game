@@ -2,7 +2,7 @@ import {createElement} from 'react';
 import propTypes from 'prop-types';
 import cn from 'classnames';
 
-import s from './Text.module.css';
+import s from './Text.module.scss';
 
 const Text = ({
                   element,

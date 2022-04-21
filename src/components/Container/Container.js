@@ -2,11 +2,12 @@ import React from 'react';
 import propTypes from 'prop-types';
 import cn from 'classnames';
 
-import s from './Container.module.css';
+import s from './Container.module.scss';
 
-const Container = ({children, className}) => {
+const Container = ({children, className }) => {
+
     return (
-        <div className={cn(s.root, className)}>
+        <div className={cn(s.root, className ? className : '')}>
             {children}
         </div>
     );

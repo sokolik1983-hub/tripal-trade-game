@@ -1,14 +1,14 @@
 import React from 'react';
 import {Container, Heading} from '../config';
 
-import s from './Slider.module.css';
+import s from './Slider.module.scss';
 
 const Slider = () => {
     return (
         <section className={s.section}>
             <div className={s.slider}>
                 <Container className={s.sliderContent}>
-                    <Heading level={1}>
+                    <Heading level={1} >
                         Это заголовок!
                     </Heading>
                     <Heading
