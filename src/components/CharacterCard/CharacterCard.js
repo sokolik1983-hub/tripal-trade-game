@@ -1,19 +1,16 @@
-import {ReactComponent as Heart} from '../../assets/heart.svg';
-import Heading from '../Heading';
+import { ReactComponent as Heart } from '../../assets/heart.svg';
 import cn from 'classnames';
 import propTypes from 'prop-types';
+import { Heading } from '../config';
+import { Link } from "react-router-dom";
 
 import s from './CharacterCard.module.scss';
 
-export const CharacterCard = ({id, name, description, src, humanName, isLike, onLikeClick, setBiographyID}) => {
+const CharacterCard = ({id, name, description, src, humanName, isLike, onLikeClick}) => {
 
     const handleClick = () => {
         onLikeClick(id);
     };
-
-    const readBiography = (id) => {
-        setBiographyID(id);
-    }
 
     return (
         <div className={s.root}>
@@ -30,29 +27,30 @@ export const CharacterCard = ({id, name, description, src, humanName, isLike, on
                 <p className={s.cardDescription}>
                     {description}
                 </p>
-                <div className={s.cardMeta} >
+                <div className={s.cardMeta}>
                     <div
                         onClick={handleClick}
                         className={cn(s.like,
-                        {[s.active]: isLike}
+                            {[s.active]: isLike}
                         )}
                     >
-                        <Heart />
+                        <Heart/>
                     </div>
                     <div className={s.readBio}>
-                        <a href="#" onClick={() => readBiography(id)}>Read bio</a>
+                        <Link to={`/characters/${id}`}>Read bio</Link>
                     </div>
                 </div>
             </div>
         </div>
-    );
+    )
+        ;
 };
 
 CharacterCard.defaultProps = {
     isLike: false,
 }
 CharacterCard.propTypes = {
-    id:  propTypes.number,
+    id: propTypes.number,
     name: propTypes.string,
     description: propTypes.string,
     thumbnail: propTypes.object,

@@ -1,10 +1,11 @@
-import {useEffect, useState} from 'react';
-import {Container} from '../config';
+import { useEffect, useState } from 'react';
 import cn from 'classnames';
+import { Container } from '../config';
+import { Link } from "react-router-dom";
 
 import s from "./Header.module.scss"
 
-const MENU = ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4'];
+const MENU = ['Main', 'Characters', 'About', 'Contacts'];
 
 const Header = () => {
     const [scroll, setScroll] = useState(null);
@@ -24,7 +25,7 @@ const Header = () => {
                     </div>
                     <ul className={s.nav}>
                         {
-                            MENU.map(item => <li key={item}><a href='#'>{item}</a></li>)
+                            MENU.map(item => <li key={item}><Link to={item === 'Main' ? '/' : `/${item.toLowerCase()}`}>{item}</Link></li>)
                         }
                     </ul>
                 </Container>
