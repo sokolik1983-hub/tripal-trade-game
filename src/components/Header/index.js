@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import { Container } from '../config';
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from 'react-router-dom';
 
-import s from "./Header.module.scss"
+import s from './Header.module.scss';
 
 const MENU = ['Main', 'Characters', 'About', 'Contacts'];
 
 const Header = () => {
     const [scroll, setScroll] = useState(null);
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/');
+    }
 
     useEffect(() => {
         window.addEventListener('scroll', () => setScroll(window.scrollY));
@@ -21,7 +26,7 @@ const Header = () => {
                 {[s.small]: scroll > 60}
             )}>
                 <Container className='headerWrap'>
-                    <div className={s.logo}>
+                    <div className={s.logo} onClick={handleClick}>
                     </div>
                     <ul className={s.nav}>
                         {

@@ -8,6 +8,10 @@
     justify-content: center;
     align-items: center;
 }
+.sliderContent {
+    padding: 64px 0 64px 0;
+    flex-direction: column;
+}
 .header {
     color: #fff;
     font-size: 54px;

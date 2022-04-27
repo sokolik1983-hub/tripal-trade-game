@@ -27,7 +27,7 @@ const Main = () => {
                     Collect Your best five!
                 </Heading>
             </div>
-            <Container className="charactersWrap">
+            <Container className={s.charactersWrap}>
                 {
                     characters.map(({
                                         id,

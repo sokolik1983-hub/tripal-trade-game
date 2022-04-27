@@ -6,7 +6,7 @@ import s from './styles.module.scss'
 const About = () => {
     return (
         <>
-            <Container className='aboutWrap'>
+            <Container className={s.aboutWrap}>
                 <Button dark><Link to='/'>На главную</Link></Button>
                 Triple Triad is played on a blank 3-by-3 square game board. Squall plays against one opponent at a time in turn-based gameplay. Both players have five cards in their hand at the start of the game. The absolute simplest explanation of the game is that it plays like the card game, WAR. A number on one player's card will be played against a number on the other player's card. The high number wins the turn.
 

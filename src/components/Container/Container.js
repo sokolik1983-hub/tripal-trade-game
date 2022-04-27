@@ -8,7 +8,9 @@ const Container = ({children, className}) => {
 
     return (
         <div className={cn(s.root,
-            s[`${className}`]
+            {
+                [className]: className,
+            }
         )}>
             {children}
         </div>
