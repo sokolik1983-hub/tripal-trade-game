@@ -19,3 +19,9 @@
   font-weight: 500;
   text-shadow: 0 0 10px #000;
 }
+.contactsWrap {
+  display: flex;
+  justify-content: space-around;
+  background: url("https://hot-portal.ru/img/stars.png") center/cover;
+  padding: 100px 0 250px;
+}

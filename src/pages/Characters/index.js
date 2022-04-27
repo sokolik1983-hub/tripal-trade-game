@@ -9,7 +9,7 @@ const Characters = () => {
     const [characters, setCharacters] = useState(CHARACTERS);
     return (
         <>
-            <Container className="charactersWrap">
+            <Container className={s.charactersWrap}>
                 {
                     characters.map(({
                                         id,

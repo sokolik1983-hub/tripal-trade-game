@@ -9,34 +9,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  &.headerWrap {
-
-  }
-  &.sliderContent {
-    padding: 64px 0 64px 0;
-    flex-direction: column;
-  }
-  &.charactersWrap {
-    padding: 30px 0;
-  }
-  &.aboutWrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 100px 0 250px;
-    & button {
-      margin-bottom: 20px;
-      a {
-        text-decoration: none;
-      }
-    }
-  }
-  &.contactsWrap {
-    display: flex;
-    justify-content: space-around;
-    background: url("https://hot-portal.ru/img/stars.png") center/cover;
-    padding: 100px 0 250px;
-  }
   @media (max-width: 1024px) {
     margin: 0 25px;
   }

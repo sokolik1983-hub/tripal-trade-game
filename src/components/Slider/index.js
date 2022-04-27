@@ -7,7 +7,7 @@ const Slider = () => {
     return (
         <section className={s.section}>
             <div className={s.slider}>
-                <Container className="sliderContent">
+                <Container className={s.sliderContent}>
                     <Heading level={1}>
                         Это заголовок!
                     </Heading>

@@ -1,7 +1,15 @@
-.root {
-  padding: 200px;
-  text-align: center;
-  a {
-    text-decoration: none;
+
+.aboutWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0 250px;
+
+  & button {
+    margin-bottom: 20px;
+
+    a {
+      text-decoration: none;
+    }
   }
 }
