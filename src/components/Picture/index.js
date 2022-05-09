@@ -1,9 +1,12 @@
 import React from "react";
 import propTypes from "prop-types";
 
+import s from './styles.module.scss'
+
 const Picture = ({src}) => {
+
     return (
-        <img src={src} alt="picture" />
+        <img style={{height: '300px'}}  src={src} className={s.bioPicture} alt="picture" />
     );
 };
 

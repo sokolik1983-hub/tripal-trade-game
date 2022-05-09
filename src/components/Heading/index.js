@@ -1,6 +1,8 @@
-import { createElement } from 'react';
+import { createElement, useEffect } from 'react';
 import cn from 'classnames';
 import propTypes from 'prop-types';
+import linkIcon from '../../assets/link_icon.svg'
+import {Link, useLocation} from "react-router-dom";
 
 import s from './Heading.module.scss';
 
@@ -8,7 +10,8 @@ const Heading = ({
                      children,
                      level,
                      className,
-                     backLine
+                     backLine,
+                     anchor
 }) => {
         const el = `h${level}`;
 
@@ -19,7 +22,16 @@ const Heading = ({
                 s[`level${level}`],
                 {[s.backLine]: backLine}
                 )
-        }, children);
+        }, children, anchor &&
+            <Link
+                to={`#${children.replace(/\s/g, '')}`}
+            >
+                <img
+                    id={children.replace(/\s/g, '')}
+                    src={linkIcon}
+                    alt="anchor"
+                />
+            </Link>);
 };
 
 Heading.defaultProps = {

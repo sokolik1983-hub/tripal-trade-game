@@ -24,6 +24,11 @@
 .level2 {
     font-size: 30px;
     line-height: 1.35;
+    & img {
+        width:  20px;
+        height: 20px;
+        margin-left: 10px;
+    }
 }
 .level3 {
     font-size: 24px;

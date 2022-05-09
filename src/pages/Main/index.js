@@ -4,9 +4,11 @@ import { CharacterCard, Container, Heading, Slider } from '../../components/conf
 import s from './styles.module.scss'
 
 import { CHARACTERS } from '../../constants/characters';
+import {useLocation} from "react-router-dom";
 
 const Main = () => {
     const [characters, setCharacters] = useState(CHARACTERS);
+    const location = useLocation();
 
     const handleLikeClick = (id) => {
         const newArrCharacters = characters.map(

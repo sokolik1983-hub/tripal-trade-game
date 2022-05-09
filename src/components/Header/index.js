@@ -1,11 +1,28 @@
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import { Container } from '../config';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link, NavLink, useNavigate} from 'react-router-dom';
 
 import s from './Header.module.scss';
 
-const MENU = ['Main', 'Characters', 'About', 'Contacts'];
+const MENU = [
+    {
+        title: 'Main',
+        href: '/',
+    },
+    {
+        title: 'Characters',
+        href: '/characters',
+    },
+    {
+        title: 'About',
+        href: '/about',
+    },
+    {
+        title: 'Contacts',
+        href: '/contacts',
+    },
+];
 
 const Header = () => {
     const [scroll, setScroll] = useState(null);
@@ -30,7 +47,15 @@ const Header = () => {
                     </div>
                     <ul className={s.nav}>
                         {
-                            MENU.map(item => <li key={item}><Link to={item === 'Main' ? '/' : `/${item.toLowerCase()}`}>{item}</Link></li>)
+                            MENU.map((item, index) =>
+                                <li key={index}>
+                                    <NavLink
+                                        to={item.href}
+                                        className={(props) => props.isActive ? s.active : ''}
+                                    >
+                                        {item.title}
+                                    </NavLink>
+                                </li>)
                         }
                     </ul>
                 </Container>
