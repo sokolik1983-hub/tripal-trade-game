@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Main, Characters, About, Contacts } from './pages/config'
+import {Main, Characters, About, Contacts, NotFound} from './pages/config'
 import { Layout } from './components/config'
 import Biography from './pages/Biography';
 
@@ -14,6 +14,7 @@ function App() {
                     <Route path='/characters/:id' element={<Biography />}/>
                     <Route path='/about' element={<About />} />
                     <Route path='/contacts' element={<Contacts />} />
+                    <Route path='*' element={<NotFound />} />
                 </Route>
             </Routes>
         </>

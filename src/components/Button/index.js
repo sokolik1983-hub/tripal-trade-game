@@ -4,10 +4,15 @@ import cn from 'classnames'
 
 import s from './styles.module.scss'
 
-const Button = ({white, children}) => {
+const Button = ({dark, children, onClick}) => {
 
     return (
-        <button className={cn({[s.white]: white})}>{children}</button>
+        <button
+            className={cn({[s.dark]: dark})}
+            onClick={() => onClick()}
+        >
+            {children}
+        </button>
     );
 };
 
