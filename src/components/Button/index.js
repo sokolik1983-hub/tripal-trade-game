@@ -4,15 +4,27 @@ import cn from 'classnames'
 
 import s from './styles.module.scss'
 
-const Button = ({dark, children, onClick}) => {
+const Button = ({
+                    dark,
+                    children,
+                    onClick,
+                    submitBtn
+}) => {
 
     return (
-        <button
-            className={cn({[s.dark]: dark})}
-            onClick={() => onClick()}
-        >
-            {children}
-        </button>
+            submitBtn ?
+            <div className={s.buttonContainer}>
+                <button>
+                    <span>{children}</span>
+                </button>
+            </div>
+            :
+            <button
+                className={cn({[s.dark]: dark})}
+                onClick={() => onClick()}
+            >
+                {children}
+            </button>
     );
 };
 

@@ -6,6 +6,7 @@ import s from './styles.module.scss';
 
 const Layout = () => {
     const match = useMatch({path: '/'});
+    const login = useMatch({path: '/login'})
     const location = useLocation();
 
     useEffect(() => {
@@ -23,7 +24,9 @@ const Layout = () => {
 
     return (
         <>
-            <Header />
+            {
+                !login && <Header />
+            }
             {
                 match !== null
                     ? <Outlet />
