@@ -19,13 +19,13 @@ const Input = ({
             <input
                 type={type}
                 name={id}
-                id={`#${id}`}
+                id={id}
                 required="required"
                 onChange={onChange}
                 value={value}
             />
             <label
-                htmlFor={`#${id}`}
+                htmlFor={id}
             >
                 {children}
             </label>

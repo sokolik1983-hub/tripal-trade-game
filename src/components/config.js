@@ -10,6 +10,6 @@ import Picture from './Picture';
 import Layout from './Layout';
 import LoginForm from './Forms/LoginForm/LoginForm';
 import RegistrationForm from './Forms/RegistrationForm/RegistrationForm';
-import Input from './Forms/components/Input';
+import Input from './Forms/Input';
 
 export { Header, Slider, Footer, Container, Heading, Text, CharacterCard, Button, Picture, Layout, LoginForm, RegistrationForm, Input };

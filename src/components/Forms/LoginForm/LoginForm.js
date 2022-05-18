@@ -10,14 +10,14 @@ const LoginForm = () => {
     const handleForSubmit = (e) => {
         e.preventDefault();
         console.log('form', form);
-    }
+    };
 
     const handleChange = (e) => {
         setForm(prevState => ({
             ...form,
             [e.target.name]: e.target.value,
-        }))
-    }
+        }));
+    };
 
     return (
         <form
