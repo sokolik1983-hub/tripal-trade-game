@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import {Main, Characters, About, Contacts, NotFound} from './pages/config'
 import { Layout } from './components/config'

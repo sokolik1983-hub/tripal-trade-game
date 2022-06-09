@@ -1,22 +1,11 @@
-import { useState } from 'react';
-import { CharacterCard, Container, Heading, Slider } from '../../components/config';
+import {useContext} from 'react';
+import {CharacterCard, Container, Heading, Slider} from '../../components/config';
+import {CharactersContext} from "../../components/Layout";
 
-import s from './styles.module.scss'
-
-import { CHARACTERS } from '../../constants/characters';
-import {useLocation} from "react-router-dom";
+import s from './styles.module.scss';
 
 const Main = () => {
-    const [characters, setCharacters] = useState(CHARACTERS);
-    const location = useLocation();
-
-    const handleLikeClick = (id) => {
-        const newArrCharacters = characters.map(
-            item => (item.id === id) ?
-                { ...item, isLike: !item.isLike } :
-                item );
-        setCharacters(newArrCharacters);
-    };
+    const {characters, handleLikeClick} = useContext(CharactersContext);
 
     return (
         <>

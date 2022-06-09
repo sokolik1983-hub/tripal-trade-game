@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
-import { CharacterCard, Container, Layout } from '../../components/config';
+import React, {useContext} from 'react';
+import {CharacterCard, Container} from '../../components/config';
+import {CharactersContext} from "../../components/Layout";
 
 import s from './styles.module.scss'
 
-import {CHARACTERS} from '../../constants/characters';
-
 const Characters = () => {
-    const [characters, setCharacters] = useState(CHARACTERS);
+    const {characters, handleLikeClick} = useContext(CharactersContext);
+
     return (
         <>
             <Container className={s.charactersWrap}>
@@ -27,6 +27,7 @@ const Characters = () => {
                             src={thumbnail.path}
                             humanName={humanName}
                             isLike={isLike}
+                            onLikeClick={handleLikeClick}
                         />)
                 }
             </Container>
