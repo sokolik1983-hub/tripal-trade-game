@@ -6,20 +6,26 @@ import {CHARACTERS} from '../../constants/characters';
 export const CharactersContext = createContext(null);
 
 const CharactersProvider = ({children}) => {
-    const lsCharacters = JSON.parse(localStorage.getItem('characters'));
-    const [characters, setCharacters] = useState(lsCharacters || CHARACTERS);
+    const [characters, setCharacters] = useState(CHARACTERS);
+
+    const handleLikeClick = (id) => {
+        const newCharacters = characters.map(
+            item => (item.id === id) ?
+                { ...item, isLike: !item.isLike } :
+                item );
+        setCharacters(newCharacters);
+        localStorage.setItem('characters', JSON.stringify(newCharacters));
+    }
+
+    useEffect(() => {
+        const lsCharacters = JSON.parse(localStorage.getItem('characters'));
+        !!lsCharacters && setCharacters(lsCharacters);
+    }, []);
 
     return (
         <CharactersContext.Provider value={{
             characters,
-            handleLikeClick: (id) => {
-                const newCharacters = characters.map(
-                    item => (item.id === id) ?
-                        { ...item, isLike: !item.isLike } :
-                        item );
-                setCharacters(newCharacters);
-                localStorage.setItem('characters', JSON.stringify(newCharacters));
-            }
+            handleLikeClick: handleLikeClick
         }}>
             {children}
         </CharactersContext.Provider>
